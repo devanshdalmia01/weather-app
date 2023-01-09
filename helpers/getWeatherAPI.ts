@@ -31,7 +31,7 @@ const getWeatherFromCityCode = async (cityCode: number, res: Response) => {
 			});
 			weather.save();
 			return res.status(200).json(weather as weatherInterface);
-		} else {
+		} else if (doc.dt < data.dt) {
 			Weather.updateOne(
 				{ id: cityCode },
 				{
@@ -48,6 +48,8 @@ const getWeatherFromCityCode = async (cityCode: number, res: Response) => {
 					return res.status(200).json(data as weatherInterface);
 				}
 			);
+		} else {
+			return res.status(200).json(data as weatherInterface);
 		}
 	});
 };
