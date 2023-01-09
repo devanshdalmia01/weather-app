@@ -7,8 +7,10 @@ const connectDB = async () => {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 		} as ConnectOptions);
-	} catch (err) {
-		console.error(err);
+	} catch (error) {
+		if (error instanceof Error) {
+			console.log(error);
+		}
 	}
 };
 
@@ -18,8 +20,10 @@ const start = async () => {
 		app.listen(process.env.PORT, () =>
 			console.log(`Server is listening on port ${process.env.PORT}...`)
 		);
-	} catch (err) {
-		console.error(err);
+	} catch (error) {
+		if (error instanceof Error) {
+			console.log(error);
+		}
 	}
 };
 

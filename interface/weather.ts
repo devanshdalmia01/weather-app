@@ -9,14 +9,14 @@ export default interface weather {
 		temp_max: number;
 		pressure: number;
 		humidity: number;
+		sea_level: number;
+		grnd_level: number;
 	};
 	visibility: number;
-	wind: { speed: number; deg: number };
+	wind: { speed: number; deg: number; gust: number };
 	clouds: { all: number };
 	dt: number;
 	sys: {
-		type: number;
-		id: number;
 		country: string;
 		sunrise: number;
 		sunset: number;

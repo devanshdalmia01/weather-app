@@ -4,6 +4,6 @@ import { getWeatherDataForCity } from "../controller/weatherController.js";
 const router = express.Router();
 
 //  Current Weather Conditions of Any Particular City
-router.get("/weather/:citycode", getWeatherDataForCity);
+router.get("/weather", getWeatherDataForCity);
 
 export default router;
