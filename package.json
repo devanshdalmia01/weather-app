@@ -20,6 +20,7 @@
 	},
 	"devDependencies": {
 		"@types/express": "^4.17.15",
+		"@types/geoip-lite": "^1.4.1",
 		"@types/node": "^18.11.18",
 		"concurrently": "^7.6.0",
 		"nodemon": "^2.0.20",

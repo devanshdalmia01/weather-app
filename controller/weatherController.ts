@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import { Request, Response } from "express";
 import { getWeatherFromCityCode } from "../helpers/getWeatherAPI.js";
-var geoip = require("geoip-lite");
+import geoip from "geoip-lite";
 
 const getWeatherDataForCity = async (req: Request, res: Response) => {
 	console.log(req.ip);
