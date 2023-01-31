@@ -2,9 +2,10 @@ import fetch from "node-fetch";
 import { Response } from "express";
 import weatherInterface from "../interface/weather.js";
 import Weather from "../models/weather.js";
+import weather from "../interface/weather.js";
 
 const getWeatherFromCityCode = async (cityCode: number, res: Response) => {
-	const data = await fetch(
+	const data: weather = (await fetch(
 		`${process.env.API_BASE_URL}weather?id=${cityCode}&appid=${process.env.API_KEY}`,
 		{
 			method: "GET",
@@ -20,7 +21,7 @@ const getWeatherFromCityCode = async (cityCode: number, res: Response) => {
 					data: error.message,
 				});
 			}
-		});
+		})) as weather;
 	Weather.findOne({ id: cityCode }, (error: Error, doc: weatherInterface) => {
 		if (error) {
 			return res
