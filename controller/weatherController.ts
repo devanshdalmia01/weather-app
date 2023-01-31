@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { getWeatherFromCityCode } from "../helpers/getWeatherAPI.js";
 
 const getWeatherDataForCity = async (req: Request, res: Response) => {
+	console.log(req.ip);
 	if (req.query.cityCode === undefined) {
 		getWeatherFromCityCode(1259229, res);
 	} else {
