@@ -5,7 +5,9 @@ import geoip from "geoip-lite";
 
 const getWeatherDataForCity = async (req: Request, res: Response) => {
 	console.log(req.ip);
+	console.log("GeoIP Package");
 	console.log(geoip.lookup(req.ip));
+	console.log("Key CDN");
 	console.log(
 		await (
 			await fetch(`https://tools.keycdn.com/geo.json?host=${req.ip}`, {
@@ -16,6 +18,7 @@ const getWeatherDataForCity = async (req: Request, res: Response) => {
 			})
 		).json()
 	);
+	console.log("IP Info");
 	console.log(
 		await (
 			await fetch(`https://ipinfo.io/${req.ip}/?token=5de107c6c57581`, {
