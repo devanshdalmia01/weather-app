@@ -1,3 +1,4 @@
+import fetch from "node-fetch";
 import { Response } from "express";
 import weatherInterface from "../interface/weather.js";
 import Weather from "../models/weather.js";
